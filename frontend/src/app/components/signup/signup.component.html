@@ -1,1 +1,49 @@
-<p>signup works!</p>
+<div class="mt-4 col-8 offset-2">
+    <div class="card">
+        <div class="card-header">Sign Up Here</div>
+        <div class="card-body">
+            <form #signupForm=ngForm (ngSubmit)="onSubmit()">
+               
+                <div class="form-group row">
+                    <label for="inputName3" class="col-sm-2 col-form-label">name</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="name" class="form-control" id="inputName3" [(ngModel)]="form.name" required>
+                        <div class="alert alert-danger" [hidden]="!errors.name">
+                            {{errors.name}}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" name="email" class="form-control" id="inputEmail3" [(ngModel)]="form.email" required>
+                        <div class="alert alert-danger" [hidden]="!errors.email">
+                            {{errors.email}}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password" name="password" class="form-control" id="inputPassword3"  [(ngModel)]="form.password" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPasswordConfirmation3" class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password" name="password_confirmation" class="form-control" id="inputPasswordConfirmation3"  [(ngModel)]="form.password_confirmation" required>
+                        <div class="alert alert-danger" [hidden]="!errors.password">
+                            {{errors.password}}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-2">
+                        <button type="submit" class="btn btn-primary" [disabled]="!signupForm.valid" >Sign up</button>
+                        <a [routerLink]="['/login']" class="btn btn-info float-right" >Sign in</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
