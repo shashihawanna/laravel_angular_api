@@ -16,4 +16,8 @@ export class JarwisService {
   login(data:any){
     return this.http.post(`${this.baseUrl}/login`, data);
   }
+
+  sendResetPasswordLink(data:any){
+    return this.http.post(`${this.baseUrl}/sendResetPasswordLink`, data);
+  }
 }
