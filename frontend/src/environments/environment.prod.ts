@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrl: 'http://anglaravel.test/api',
+  title:'AngLaravel',
 };

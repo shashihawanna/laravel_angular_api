@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class JarwisService {
 
-  private baseUrl ='http://anglaravel.test/api';
+  private baseUrl =environment.baseUrl;
   constructor(private http: HttpClient) { }
 
   signup(data:any){
@@ -15,6 +16,10 @@ export class JarwisService {
 
   login(data:any){
     return this.http.post(`${this.baseUrl}/login`, data);
+  }
+
+  resetPassword(data:any){
+    return this.http.post(`${this.baseUrl}/resetPassword`, data);
   }
 
   sendResetPasswordLink(data:any){
