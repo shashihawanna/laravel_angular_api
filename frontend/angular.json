@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+               "node_modules/ng-snotify/styles/material.scss",
               "src/styles.css"
             ],
             "scripts": []

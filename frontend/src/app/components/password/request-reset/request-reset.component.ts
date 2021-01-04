@@ -27,11 +27,11 @@ export class RequestResetComponent implements OnInit {
   }
 
   handleResponse(data: any){
-    console.log(data);
     //this.router.navigateByUrl('/login');
+    this.notify.success(data.data,{timeout:0});
   }
   handleError(error: any){
-    this.notify.error(error.error.error);
+    this.notify.error(error.error.eroor);
   }
 
   ngOnInit(): void {
